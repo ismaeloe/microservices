@@ -6,7 +6,7 @@ server:
     include-binding-errors: always
 
 # To See H2 Console in Browser:
-# http://localhost:8091/h2-console
+# http://localhost:8096/h2-console
 # Enabling H2 Console
 spring:
   h2:
@@ -42,9 +42,21 @@ logging:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8099/eureka/
+      defaultZone: http://localhost:8761/eureka/
 management:
   endpoints:
+    enabled-by-default: true
     web:
       exposure:
         include: "*"
+  endpoint:
+    info:
+      enabled: true
+    shutdown:
+      enabled: true
+    health:
+      show-details: always
+    health.show-details=always
+
+
+    
