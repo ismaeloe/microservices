@@ -56,7 +56,6 @@ management:
       enabled: true
     health:
       show-details: always
-    health.show-details=always
 
 
     
