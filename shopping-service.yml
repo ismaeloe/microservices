@@ -59,9 +59,10 @@ Feign:
     enabled: true
 management:
   endpoints:
+    enabled-by-default: true
     hystrix:
       stream:
         enabled: true
     web:
       exposure:
-        include: hystrix.stream
+        include: hystrix.stream, "*"
