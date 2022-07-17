@@ -65,4 +65,4 @@ management:
         enabled: true
     web:
       exposure:
-        include: hystrix.stream
+        include: hystrix.stream , *
