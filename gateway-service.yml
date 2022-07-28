@@ -17,11 +17,14 @@ spring:
           uri: lb://customer-service
           predicates:
             - Path=/customers/**
-#        - id: product-service
-#          uri: lb://product-service
-#          predicates:
-#            - Path=/products/**
+            - Header=Authorization, Bearer (.*)
+        - id: product-service
+          uri: lb://product-service
+          predicates:
+            - Path=/products/**
+            - Header=Authorization, Bearer (.*)
         - id: shopping-service
           uri: lb://shopping-service
           predicates:
             - Path=/invoices/**
+            - Header=Authorization, Bearer (.*)
